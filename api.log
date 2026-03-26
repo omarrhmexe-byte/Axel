@@ -122,3 +122,6 @@
 [INFO] 22:44:51 Restarting: C:\root\hiring-autopilot-api\src\app.ts has been modified
 {"timestamp":"2026-03-26T17:14:51.897Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
 {"timestamp":"2026-03-26T17:14:52.100Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 22:48:25 Restarting: C:\root\hiring-autopilot-api\src\config\demo.ts has been modified
+{"timestamp":"2026-03-26T17:18:25.783Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-26T17:18:25.816Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
