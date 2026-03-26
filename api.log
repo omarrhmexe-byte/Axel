@@ -1,0 +1,124 @@
+[INFO] 14:42:32 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+{"timestamp":"2026-03-25T09:12:33.116Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:12:33.172Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T09:13:40.761Z","level":"info","message":"Generating role intelligence","meta":{"company":"Axel HQ","budget_lpa":35}}
+{"timestamp":"2026-03-25T09:14:09.129Z","level":"error","message":"Failed to save role: null value in column \"company_name\" of relation \"roles\" violates not-null constraint","meta":{}}
+{"timestamp":"2026-03-25T09:14:51.164Z","level":"info","message":"Generating role intelligence","meta":{"company":"Axel HQ","budget_lpa":35}}
+{"timestamp":"2026-03-25T09:15:14.280Z","level":"info","message":"Role saved","meta":{"role_id":"ac55a86c-e26c-46a1-a979-8ee34bd01006"}}
+{"timestamp":"2026-03-25T09:15:14.817Z","level":"info","message":"Pipeline started","meta":{"runId":"85b22575-7791-4331-b5a8-db08cb7ca4db","roleId":"ac55a86c-e26c-46a1-a979-8ee34bd01006"}}
+{"timestamp":"2026-03-25T09:16:03.982Z","level":"error","message":"Pipeline failed","meta":{"runId":"85b22575-7791-4331-b5a8-db08cb7ca4db","roleId":"ac55a86c-e26c-46a1-a979-8ee34bd01006","err":"Failed to filter candidates: \"failed to parse logic tree ((location.ilike.%Bangalore%,location.ilike.%Bengaluru%,location.ilike.%Bangalore, India%,location.ilike.%Bengaluru, India%,location.ilike.%Bangalore, Karnataka%,location.ilike.%Bengaluru, Karnataka%,location.ilike.%Remote India%,location.ilike.%Karnataka, India%))\" (line 1, column 90)"}}
+{"timestamp":"2026-03-25T09:16:04.474Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>5 repos:>10"}}
+[INFO] 14:46:54 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T09:16:55.268Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:16:55.281Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T09:17:20.523Z","level":"info","message":"Generating role intelligence","meta":{"company":"Axel HQ","budget_lpa":35}}
+{"timestamp":"2026-03-25T09:17:51.706Z","level":"info","message":"Role saved","meta":{"role_id":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:17:52.119Z","level":"info","message":"Pipeline started","meta":{"runId":"8cebd4e9-d43f-4552-9ffb-1636bd308ad4","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:18:31.173Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript kubernetes docker location:bengaluru repos:>8"}}
+{"timestamp":"2026-03-25T09:18:31.173Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>10 repos:>15"}}
+{"timestamp":"2026-03-25T09:18:31.213Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>5 repos:>10"}}
+{"timestamp":"2026-03-25T09:18:31.356Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore type:user sort:repositories"}}
+{"timestamp":"2026-03-25T09:18:31.356Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":0,"db_candidates":0}}
+{"timestamp":"2026-03-25T09:18:31.356Z","level":"info","message":"After deduplication","meta":{"total":0}}
+{"timestamp":"2026-03-25T09:18:33.909Z","level":"info","message":"Pipeline completed","meta":{"runId":"8cebd4e9-d43f-4552-9ffb-1636bd308ad4","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","headline":"0 candidates sourced · 0 strong · 0 moderate · 0 explore · 0 no fit","strong_alignment":0,"moderate_alignment":0,"explore":0,"no_fit":0}}
+[INFO] 14:53:33 Restarting: C:\root\hiring-autopilot-api\src\controllers\agentController.ts has been modified
+{"timestamp":"2026-03-25T09:23:33.967Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:23:33.990Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T09:33:56.252Z","level":"info","message":"Pipeline started","meta":{"runId":"657a2d97-45f9-4bd7-9123-a3a96f861ae7","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:34:22.833Z","level":"error","message":"Pipeline failed","meta":{"runId":"657a2d97-45f9-4bd7-9123-a3a96f861ae7","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","err":"529 {\"type\":\"error\",\"error\":{\"type\":\"overloaded_error\",\"message\":\"Overloaded\"},\"request_id\":\"req_011CZPZzHDX9aaDjVktjMvHL\"}"}}
+{"timestamp":"2026-03-25T09:36:24.036Z","level":"info","message":"Pipeline started","meta":{"runId":"88c537a7-bc4c-4bec-9a75-5d024cba006a","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:37:04.940Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"distributed systems nodejs location:bengaluru"}}
+{"timestamp":"2026-03-25T09:37:04.984Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"backend typescript postgresql location:india repos:>8"}}
+{"timestamp":"2026-03-25T09:37:04.999Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"kubernetes typescript backend location:india followers:>5"}}
+{"timestamp":"2026-03-25T09:37:04.999Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>15 repos:>10"}}
+{"timestamp":"2026-03-25T09:37:05.034Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>10 repos:>5"}}
+{"timestamp":"2026-03-25T09:37:05.036Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"appsmith OR hasura OR chargebee location:india language:typescript"}}
+{"timestamp":"2026-03-25T09:37:05.036Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":0,"db_candidates":0}}
+{"timestamp":"2026-03-25T09:37:05.037Z","level":"info","message":"After deduplication","meta":{"total":0}}
+{"timestamp":"2026-03-25T09:37:07.697Z","level":"info","message":"Pipeline completed","meta":{"runId":"88c537a7-bc4c-4bec-9a75-5d024cba006a","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","headline":"0 candidates sourced · 0 strong · 0 moderate · 0 explore · 0 no fit","strong_alignment":0,"moderate_alignment":0,"explore":0,"no_fit":0}}
+[INFO] 15:09:51 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T09:39:52.457Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:39:52.481Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:09:56 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T09:39:57.237Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:39:57.247Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T09:40:07.440Z","level":"info","message":"Pipeline started","meta":{"runId":"03f91780-64b8-4f4c-bf8a-2fda637dbb40","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:40:44.908Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"typescript kafka microservices location:india"}}
+{"timestamp":"2026-03-25T09:40:44.914Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>15"}}
+{"timestamp":"2026-03-25T09:40:44.924Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore repos:>15"}}
+{"timestamp":"2026-03-25T09:40:44.995Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>10"}}
+{"timestamp":"2026-03-25T09:40:45.054Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:india repos:>10 followers:>20"}}
+{"timestamp":"2026-03-25T09:40:45.189Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"typescript kubernetes location:bengaluru followers:>5"}}
+{"timestamp":"2026-03-25T09:40:45.190Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":0,"db_candidates":0}}
+{"timestamp":"2026-03-25T09:40:45.190Z","level":"info","message":"After deduplication","meta":{"total":0}}
+{"timestamp":"2026-03-25T09:40:47.971Z","level":"info","message":"Pipeline completed","meta":{"runId":"03f91780-64b8-4f4c-bf8a-2fda637dbb40","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","headline":"0 candidates sourced · 0 strong · 0 moderate · 0 explore · 0 no fit","strong_alignment":0,"moderate_alignment":0,"explore":0,"no_fit":0}}
+{"timestamp":"2026-03-25T09:47:08.405Z","level":"info","message":"Pipeline started","meta":{"runId":"6fbef77b-07e3-463b-a036-4fd048a51ee1","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T09:47:45.516Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>10 repos:>5"}}
+{"timestamp":"2026-03-25T09:47:45.716Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>15 repos:>10"}}
+{"timestamp":"2026-03-25T09:47:45.718Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":0,"db_candidates":9}}
+{"timestamp":"2026-03-25T09:47:45.726Z","level":"info","message":"After deduplication","meta":{"total":9}}
+[INFO] 15:23:33 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T09:53:33.889Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T09:53:33.912Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:37:19 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T10:07:21.046Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:07:21.082Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:37:25 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T10:07:26.433Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:07:26.444Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:37:37 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T10:07:38.333Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:07:38.344Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:37:50 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T10:07:50.908Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:07:50.923Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:38:07 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T10:08:08.316Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:08:08.332Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:38:28 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T10:08:29.150Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:08:29.205Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:38:46 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T10:08:46.815Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:08:46.828Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:38:51 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T10:08:52.137Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:08:52.172Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:38:58 Restarting: C:\root\hiring-autopilot-api\src\services\hiringAgent.ts has been modified
+{"timestamp":"2026-03-25T10:08:59.317Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:08:59.335Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:39:04 Restarting: C:\root\hiring-autopilot-api\src\app.ts has been modified
+{"timestamp":"2026-03-25T10:09:05.482Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:09:05.501Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:39:09 Restarting: C:\root\hiring-autopilot-api\src\app.ts has been modified
+{"timestamp":"2026-03-25T10:09:09.717Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:09:09.781Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T10:13:39.177Z","level":"info","message":"Pipeline started","meta":{"runId":"9f3e27bf-ac0a-43a2-9dbf-be3936578da0","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T10:14:17.341Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>15 repos:>10"}}
+{"timestamp":"2026-03-25T10:14:17.463Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:karnataka followers:>10 repos:>10"}}
+{"timestamp":"2026-03-25T10:14:17.731Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"typescript distributed systems location:india followers:>5 repos:>8"}}
+{"timestamp":"2026-03-25T10:14:17.735Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>10 repos:>5"}}
+{"timestamp":"2026-03-25T10:14:17.736Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":0,"db_candidates":4}}
+{"timestamp":"2026-03-25T10:14:17.737Z","level":"info","message":"After deduplication","meta":{"total":4}}
+{"timestamp":"2026-03-25T10:15:52.053Z","level":"info","message":"Pipeline completed","meta":{"runId":"9f3e27bf-ac0a-43a2-9dbf-be3936578da0","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","headline":"4 candidates sourced · 0 strong · 0 moderate · 4 explore · 0 no fit → 4 worth reviewing","strong_alignment":0,"moderate_alignment":0,"explore":4,"no_fit":0}}
+[INFO] 15:49:10 Restarting: C:\root\hiring-autopilot-api\src\controllers\agentController.ts has been modified
+{"timestamp":"2026-03-25T10:19:11.053Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:19:11.068Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:49:21 Restarting: C:\root\hiring-autopilot-api\src\services\candidateService.ts has been modified
+{"timestamp":"2026-03-25T10:19:21.866Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:19:21.881Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 15:49:31 Restarting: C:\root\hiring-autopilot-api\src\controllers\agentController.ts has been modified
+{"timestamp":"2026-03-25T10:19:32.359Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-25T10:19:32.371Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+{"timestamp":"2026-03-25T10:19:45.689Z","level":"info","message":"Pipeline started","meta":{"runId":"e072863c-a702-4bf3-8b6c-6a4aaf48f4c6","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503"}}
+{"timestamp":"2026-03-25T10:20:26.851Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bangalore followers:>15 repos:>10"}}
+{"timestamp":"2026-03-25T10:20:26.852Z","level":"warn","message":"GitHub rate limit reached, skipping GitHub sourcing","meta":{"query":"language:typescript location:bengaluru followers:>10 repos:>5"}}
+{"timestamp":"2026-03-25T10:20:27.490Z","level":"info","message":"Sourcing raw results","meta":{"github_candidates":32,"db_candidates":9}}
+{"timestamp":"2026-03-25T10:20:27.490Z","level":"info","message":"After deduplication","meta":{"total":41}}
+{"timestamp":"2026-03-25T10:59:39.154Z","level":"info","message":"Pipeline completed","meta":{"runId":"e072863c-a702-4bf3-8b6c-6a4aaf48f4c6","roleId":"7d7d7897-34d8-4711-886e-be31cfe82503","headline":"41 candidates sourced · 0 strong · 0 moderate · 9 explore · 32 no fit → 9 worth reviewing","strong_alignment":0,"moderate_alignment":0,"explore":9,"no_fit":32}}
+[INFO] 22:41:27 Restarting: C:\root\hiring-autopilot-api\src\config\env.ts has been modified
+{"timestamp":"2026-03-26T17:11:30.232Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-26T17:11:30.274Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}
+[INFO] 22:44:51 Restarting: C:\root\hiring-autopilot-api\src\app.ts has been modified
+{"timestamp":"2026-03-26T17:14:51.897Z","level":"warn","message":"GITHUB_TOKEN not set — GitHub API is rate-limited to 60 req/hr (unauthenticated)"}
+{"timestamp":"2026-03-26T17:14:52.100Z","level":"info","message":"Hiring Autopilot API running","meta":{"port":3000,"env":"development"}}

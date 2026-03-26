@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-900 font-body;
+  }
+}
+
+@layer components {
+  /* ── Confidence badges ───────────────────────────── */
+  .badge-high {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+  .badge-medium {
+    @apply bg-amber-50 text-amber-700 border border-amber-200;
+  }
+  .badge-low {
+    @apply bg-violet-50 text-violet-700 border border-violet-200;
+  }
+
+  /* ── Source badges ───────────────────────────────── */
+  .badge-github {
+    @apply bg-stone-100 text-stone-600 border border-stone-200;
+  }
+  .badge-db {
+    @apply bg-blue-50 text-blue-600 border border-blue-100;
+  }
+  .badge-linkedin {
+    @apply bg-sky-50 text-sky-600 border border-sky-100;
+  }
+
+  /* ── Card surface ────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-xl border border-stone-200/80 shadow-[0_1px_4px_rgba(0,0,0,0.06)];
+  }
+
+  /* ── Confidence accent borders ───────────────────── */
+  .card-accent-high {
+    @apply border-l-4 border-l-emerald-400;
+  }
+  .card-accent-medium {
+    @apply border-l-4 border-l-amber-400;
+  }
+  .card-accent-low {
+    @apply border-l-4 border-l-violet-400;
+  }
+
+  /* ── Section wrapper ─────────────────────────────── */
+  .section {
+    @apply max-w-screen-xl mx-auto px-6 py-24 lg:py-32;
+  }
+
+  /* ── Dot grid background ─────────────────────────── */
+  .dot-grid {
+    background-image: radial-gradient(circle, #d6d3d1 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ── Gradient headline ───────────────────────────── */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600;
+  }
+
+  /* ── Shimmer skeleton ────────────────────────────── */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #f1f0ef 25%,
+      #e8e6e4 50%,
+      #f1f0ef 75%
+    );
+    background-size: 400% 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+}
