@@ -3,17 +3,6 @@ import { CheckCircle2, XCircle, Loader2, Clock } from 'lucide-react';
 import type { WorkflowStep } from '../../types';
 import { timeAgo } from '../../lib/utils';
 
-const STEP_LABELS: Record<string, string> = {
-  role_fetch:         'Loading role',
-  sourcing_strategy:  'Deriving sourcing strategy',
-  candidate_fetch:    'Fetching candidates',
-  candidate_upsert:   'Saving candidates',
-  analysis:           'Analyzing candidates',
-  matching:           'Grouping by signal strength',
-  enrichment:         'Preparing your briefing',
-  complete:           'Pipeline complete',
-};
-
 function StepIcon({ status }: { status: WorkflowStep['status'] }) {
   if (status === 'done') {
     return (
@@ -56,9 +45,8 @@ export function SystemLog({ steps }: Props) {
           initial={{ opacity: 0, x: -8 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: i * 0.15, type: 'spring', stiffness: 280, damping: 28 }}
-          className={`flex items-start gap-3 px-4 py-2.5 ${
-            i !== steps.length - 1 ? 'border-b border-stone-100' : ''
-          }`}
+          className={`flex items-start gap-3 px-4 py-2.5 ${i !== steps.length - 1 ? 'border-b border-stone-100' : ''
+            }`}
         >
           <StepIcon status={step.status} />
 

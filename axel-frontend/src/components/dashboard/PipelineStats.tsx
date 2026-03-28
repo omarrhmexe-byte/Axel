@@ -1,23 +1,22 @@
 import { Users, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import type { PipelineRunResponse, ConfidencePipeline } from '../../types';
-import { pluralise } from '../../lib/utils';
 
 interface Props {
-  run:      PipelineRunResponse;
+  run: PipelineRunResponse;
   pipeline: ConfidencePipeline | null;
 }
 
 export function PipelineStats({ run, pipeline }: Props) {
-  const total   = (pipeline?.high?.length ?? 0) +
-                  (pipeline?.medium?.length ?? 0) +
-                  (pipeline?.low?.length ?? 0);
-  const high    = pipeline?.high?.length ?? 0;
+  const total = (pipeline?.high?.length ?? 0) +
+    (pipeline?.medium?.length ?? 0) +
+    (pipeline?.low?.length ?? 0);
+  const high = pipeline?.high?.length ?? 0;
   const sourced = run.system_log?.find((s) => s.step === 'candidate_upsert')?.meta?.['count'] as number | undefined;
 
   const stats = [
-    { Icon: Users,         label: 'Sourced',        value: sourced ?? '–',  color: 'text-stone-700' },
-    { Icon: Sparkles,      label: 'Matched',         value: total,           color: 'text-indigo-600' },
-    { Icon: CheckCircle2,  label: 'High Signal',     value: high,            color: 'text-emerald-600' },
+    { Icon: Users, label: 'Sourced', value: sourced ?? '–', color: 'text-stone-700' },
+    { Icon: Sparkles, label: 'Matched', value: total, color: 'text-indigo-600' },
+    { Icon: CheckCircle2, label: 'High Signal', value: high, color: 'text-emerald-600' },
   ];
 
   return (
