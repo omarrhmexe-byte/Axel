@@ -36,15 +36,26 @@ app.get("/", (_req, res) => {
 const START_TIME = Date.now();
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
+// Explicit allow-list for production domains.
+// The wildcard patterns below cover all preview/deploy URLs from each platform.
+// To add a custom domain: append it to ALLOWED_ORIGINS.
 const ALLOWED_ORIGINS = [
   'http://localhost:5173',
   'http://localhost:4173',
   'https://axelhq.vercel.app',
 ];
 
+function isAllowedOrigin(origin: string): boolean {
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  if (origin.endsWith('.vercel.app')) return true;   // Vercel preview + production
+  if (origin.endsWith('.onrender.com')) return true; // Render preview deploys
+  if (origin.endsWith('.koyeb.app')) return true;    // Koyeb deployments
+  return false;
+}
+
 app.use((req: Request, res: Response, next: NextFunction) => {
   const origin = req.headers.origin ?? '';
-  if (ALLOWED_ORIGINS.includes(origin) || origin.endsWith('.vercel.app')) {
+  if (isAllowedOrigin(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   }
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');

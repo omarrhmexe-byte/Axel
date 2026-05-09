@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: axel-api
+    env: node
+    rootDir: hiring-autopilot-api
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # PORT is injected automatically by Render — do not hardcode it here
+      # Add the following in the Render dashboard (mark as secret):
+      #   ANTHROPIC_API_KEY
+      #   SUPABASE_URL
+      #   SUPABASE_SERVICE_ROLE_KEY
+      #   GITHUB_TOKEN
+      #   MANUS_API_KEY
