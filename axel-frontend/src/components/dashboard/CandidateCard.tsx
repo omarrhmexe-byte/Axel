@@ -49,9 +49,9 @@ export function CandidateCard({ candidate, index }: CandidateCardProps) {
   const card    = candidate.card;
   const advisory = candidate.advisory;
 
-  // Positioning line: advisory quick_take → card headline → summary
+  // Positioning line: first advisory signal → card headline → summary
   const positioning: string | undefined =
-    advisory?.quick_take ?? card?.headline ?? candidate.summary;
+    advisory?.why_interesting?.[0] ?? card?.headline ?? candidate.summary;
 
   // Signals: card alignment bullets → match_reasons
   const signals: string[] = (
@@ -60,8 +60,8 @@ export function CandidateCard({ candidate, index }: CandidateCardProps) {
     []
   );
 
-  // Open questions from advisory
-  const questions: string[] = advisory?.open_questions?.slice(0, 2) ?? [];
+  // Key question from advisory
+  const keyQuestion: string | undefined = advisory?.question_to_ask;
 
   // Primary risk
   const risk: string | undefined =
@@ -119,20 +119,13 @@ export function CandidateCard({ candidate, index }: CandidateCardProps) {
           </ul>
         )}
 
-        {/* ── Open questions (if advisory available) ─────────── */}
-        {questions.length > 0 && (
+        {/* ── Key question (if advisory available) ─────────── */}
+        {keyQuestion && (
           <div className="mb-2.5">
             <p className="text-[9px] font-mono uppercase tracking-widest text-stone-400 mb-1">
-              Questions
+              Ask before a call
             </p>
-            <ul className="space-y-0.5">
-              {questions.map((q, i) => (
-                <li key={i} className="flex items-start gap-1.5 text-[10px] text-stone-500">
-                  <span className="text-stone-300 mt-px shrink-0">·</span>
-                  <span className="line-clamp-1">{q}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="text-[10px] text-stone-500 line-clamp-2 leading-relaxed">{keyQuestion}</p>
           </div>
         )}
 

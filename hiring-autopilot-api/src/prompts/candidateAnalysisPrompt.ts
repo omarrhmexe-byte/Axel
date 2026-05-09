@@ -9,7 +9,7 @@ export function buildCandidateAnalysisPrompt(
 
   const responsesSection = hasResponses
     ? `
-CANDIDATE RESPONSES (prioritise these over inferred signals — they are first-person):
+CANDIDATE RESPONSES (prioritise these over inferred signals, as they are first-person):
 ${responses!
   .map((r, i) => `Q${i + 1}: ${r.question}\nA${i + 1}: ${r.answer}`)
   .join('\n\n')}`
@@ -25,11 +25,11 @@ GitHub signals:
     : '';
 
   const responseGuidance = hasResponses
-    ? `- The candidate has provided direct responses — extract ambition, intent, and career direction from these
+    ? `- The candidate has provided direct responses. Extract ambition, intent, and career direction from these
 - Prioritise what they said over what you infer from their profile
 - motivation_signals must come from their actual words
 - value_signals should reflect where they see themselves contributing`
-    : `- No direct responses available — infer motivation and value signals from profile context
+    : `- No direct responses available. Infer motivation and value signals from profile context
 - motivation_signals should be inferred carefully from career trajectory and choices
 - value_signals should reflect likely areas of contribution based on their background`;
 
@@ -61,7 +61,7 @@ ${derivedSection}
 ${responsesSection}
 
 ANALYSIS GUIDANCE:
-- Be honest and specific — avoid generic phrases like "strong communicator"
+- Be honest and specific. Avoid generic phrases like "strong communicator"
 - Do not inflate strengths; a useful gap is better than a vague compliment
 ${responseGuidance}
 

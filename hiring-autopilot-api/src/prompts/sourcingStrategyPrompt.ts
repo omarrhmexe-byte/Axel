@@ -40,13 +40,13 @@ Generate a sourcing strategy. Think like a recruiter who actually sources talent
 RULES:
 - GitHub queries must be realistic and usable with GitHub User Search API syntax
 - Queries must align with budget, location, and role context
-- Avoid generic queries like "developer" — be specific
+- Avoid generic queries like "developer". Be specific
 - db_filters.locations should include the primary city AND common variants (e.g. "Bangalore", "Bengaluru", "Remote India")
 - db_filters.titles should match realistic job titles candidates use on their profiles
 - db_filters.companies should target alumni from companies in target_companies
 - reasoning must explain the trade-offs and choices, not just restate the facts
 
-OUTPUT — return ONLY valid JSON with exactly this structure (no markdown fences):
+OUTPUT: return ONLY valid JSON with exactly this structure (no markdown fences):
 {
   "strategy_summary": "2-3 sentences on how you will approach sourcing for this role",
   "github_queries": [
@@ -68,7 +68,7 @@ OUTPUT — return ONLY valid JSON with exactly this structure (no markdown fence
   "reasoning": [
     "Targeting developers with API experience because the role owns integrations",
     "Focusing on Bangalore talent pool to match budget and avoid relocation costs",
-    "Avoiding FAANG alumni — compensation expectations will exceed ${constraints.budget_lpa} LPA"
+    "Avoiding FAANG alumni, compensation expectations will exceed ${constraints.budget_lpa} LPA"
   ]
 }`;
 }

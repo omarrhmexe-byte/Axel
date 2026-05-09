@@ -12,15 +12,15 @@ Company stage: ${intelligence.company_context.stage}
 Team environment: ${intelligence.company_context.team_environment}
 
 WHAT TO EXTRACT:
-- Real experience (not what they claim — what they actually built or owned)
+- Real experience (not what they claim, but what they actually built or owned)
 - Motivation (why they're open to this conversation, what they're optimising for)
-- Ambition (where they want to go — short and long term)
+- Ambition (where they want to go, short and long term)
 - Working style (how they operate, what environments they thrive in)
 - Values (what they care about in work, teams, and companies)
 
 RULES:
-- Conversational tone — these are questions a thoughtful person would ask, not an HR checklist
-- Open-ended — avoid yes/no questions
+- Conversational tone. These are questions a thoughtful person would ask, not an HR checklist
+- Open-ended. Avoid yes/no questions
 - Specific to this role and company stage
 - Each question must have a clear purpose that explains what signal you're extracting
 - Do NOT ask about salary, availability, or logistics

@@ -4,6 +4,10 @@ import type {
   Role,
   CandidateQuestion,
   CandidateResponse,
+  FeedbackEventType,
+  DeepAdvisoryResult,
+  OutreachResult,
+  ResponseAnalysisResult,
 } from '../types';
 
 const BASE = (import.meta.env.VITE_API_BASE_URL as string) || 'http://localhost:3000';
@@ -51,4 +55,46 @@ export const submitResponses = (candidateId: string, responses: CandidateRespons
   req<{ candidate_id: string; stored: boolean }>('/candidate-responses', {
     method: 'POST',
     body: JSON.stringify({ candidate_id: candidateId, responses }),
+  });
+
+// ─── Feedback ─────────────────────────────────────────────────────────────────
+export const submitFeedback = (
+  candidateId: string,
+  roleId:      string,
+  eventType:   FeedbackEventType,
+  extra?:      Record<string, unknown>,
+) =>
+  req<{ success: boolean }>('/feedback', {
+    method: 'POST',
+    body: JSON.stringify({ candidate_id: candidateId, role_id: roleId, event_type: eventType, ...extra }),
+  });
+
+// ─── Advisory ─────────────────────────────────────────────────────────────────
+export const requestDeepAdvisory = (
+  roleId:      string,
+  candidateId: string,
+  mode:        'fast' | 'deep' = 'deep',
+) =>
+  req<DeepAdvisoryResult>('/deep-advisory', {
+    method: 'POST',
+    body: JSON.stringify({ role_id: roleId, candidate_id: candidateId, mode }),
+  });
+
+// ─── Outreach ─────────────────────────────────────────────────────────────────
+export const generateOutreach = (roleId: string, candidateId: string) =>
+  req<OutreachResult>('/generate-outreach', {
+    method: 'POST',
+    body: JSON.stringify({ role_id: roleId, candidate_id: candidateId }),
+  });
+
+// ─── Response analysis ────────────────────────────────────────────────────────
+export const analyzeResponse = (
+  roleId:      string,
+  candidateId: string,
+  question:    string,
+  response:    string,
+) =>
+  req<ResponseAnalysisResult>('/analyze-response', {
+    method: 'POST',
+    body: JSON.stringify({ role_id: roleId, candidate_id: candidateId, question, response }),
   });

@@ -1,4 +1,4 @@
-import { Lightbulb, Star, Target, HelpCircle } from 'lucide-react';
+import { Lightbulb, Star, TrendingUp, HelpCircle } from 'lucide-react';
 import type { AdvisoryOutput } from '../../types';
 
 interface AdvisoryPanelProps {
@@ -37,35 +37,41 @@ function AdvisorySection({ Icon, color, title, items }: SectionProps) {
 export function AdvisoryPanel({ advisory }: AdvisoryPanelProps) {
   return (
     <div className="space-y-5">
-      {/* Quick take */}
-      <div className="bg-stone-50/60 rounded-lg p-3.5">
-        <p className="text-xs font-semibold text-stone-400 uppercase tracking-wide mb-1.5">
-          Quick Take
-        </p>
-        <p className="text-sm text-stone-700 leading-relaxed italic">
-          {advisory.quick_take}
-        </p>
-      </div>
-
-      {/* Sections */}
+      {/* Why interesting */}
       <AdvisorySection
         Icon={Star}
         color="bg-amber-500"
         title="Why Interesting"
         items={advisory.why_interesting}
       />
-      <AdvisorySection
-        Icon={Target}
-        color="bg-emerald-500"
-        title="Where They Add Value"
-        items={advisory.where_they_add_value}
-      />
+
+      {/* Risk / Unknown */}
       <AdvisorySection
         Icon={HelpCircle}
-        color="bg-violet-500"
-        title="Open Questions"
-        items={advisory.open_questions}
+        color="bg-rose-500"
+        title="Risk / Unknown"
+        items={advisory.risk_unknown}
       />
+
+      {/* Trajectory */}
+      <AdvisorySection
+        Icon={TrendingUp}
+        color="bg-sky-500"
+        title="Trajectory"
+        items={advisory.trajectory}
+      />
+
+      {/* Question to ask */}
+      {advisory.question_to_ask && (
+        <div className="bg-stone-50/60 rounded-lg p-3.5 border-l-2 border-amber-400">
+          <p className="text-xs font-semibold text-stone-400 uppercase tracking-wide mb-1.5">
+            Ask Before You Call
+          </p>
+          <p className="text-sm text-stone-700 leading-relaxed">
+            {advisory.question_to_ask}
+          </p>
+        </div>
+      )}
 
       {/* Disclaimer */}
       <p className="text-xs text-stone-400 pt-2 border-t border-stone-100">

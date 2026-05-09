@@ -29,11 +29,25 @@ export interface CandidateCard {
   sections: CardSections;
 }
 
+// ─── Response analysis output ────────────────────────────────────────────────
+
+export type SignalQuality = 'strong' | 'medium' | 'weak';
+export type ResponseDecision = 'move_to_call' | 'ask_followup' | 'drop';
+
+export interface ResponseAnalysisOutput {
+  signal_quality:  SignalQuality;
+  what_we_learned: string[];   // Concrete observations from the response
+  what_is_unclear: string[];   // Remaining gaps
+  decision:        ResponseDecision;
+  decision_reason: string;     // One sentence
+}
+
 // ─── HM Advisor output ───────────────────────────────────────────────────────
+// Shape produced by advisorPrompt.ts — Claude acting as top 1% recruiter.
 
 export interface AdvisoryOutput {
-  quick_take: string;             // 1–2 line insight on this candidate
-  why_interesting: string[];      // Specific reasons tied to the role
-  where_they_add_value: string[]; // Practical contribution areas
-  open_questions: string[];       // Things the HM should probe further
+  why_interesting:  string[];  // Concrete evidence tied to this specific role
+  risk_unknown:     string[];  // What is NOT proven; what could break
+  trajectory:       string[];  // Direction they are moving; environment they thrive in
+  question_to_ask:  string;    // ONE human question to reduce the biggest uncertainty
 }

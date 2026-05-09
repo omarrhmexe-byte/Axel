@@ -45,6 +45,8 @@ export interface CandidateInsight {
   confidence_layer?: ConfidenceLayer;
   match_reasons?: string[];
   concerns?: string[];
+  // GitHub / public signals — carried from CandidateProfile when available
+  derived_signals?: DerivedSignals;
   // Recruiter workflow state
   status?: InsightStatus;
   // Presentation layer — populated after enrichment step

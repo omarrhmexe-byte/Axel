@@ -22,15 +22,15 @@ Observed signals: ${insight.signals.join(', ')}
 Strengths: ${insight.strengths.join(', ')}
 Gaps: ${insight.gaps.join(', ')}
 
-ALIGNMENT GROUPS — assign exactly one:
+ALIGNMENT GROUPS, assign exactly one:
 - "strong_alignment": Hits most core signals, culture fits, experience range is right. You would eagerly move them forward.
 - "moderate_alignment": Good potential but needs validation. Missing some signals or has concerns worth probing.
 - "explore": Low confidence but interesting in some way. Worth adding to a discovery long-list.
-- "no_fit": Clear misalignment on fundamentals — wrong level, domain, or core signals.
+- "no_fit": Clear misalignment on fundamentals: wrong level, domain, or core signals.
 
 INSTRUCTIONS:
 - Think like a seasoned hiring manager, not a keyword matcher.
-- Be honest. If there are real concerns, surface them — do not paper over gaps.
+- Be honest. If there are real concerns, surface them. Do not paper over gaps.
 - Do NOT assign a numeric score. Reasoning only.
 - Your match_reasons and concerns must be specific to this candidate, not generic statements.
 

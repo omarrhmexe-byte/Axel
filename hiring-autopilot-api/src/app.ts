@@ -18,7 +18,9 @@ import agentRoutes from './routes/agentRoutes';
 import conversationRoutes from './routes/conversationRoutes';
 import feedbackRoutes from './routes/feedbackRoutes';
 import deepAdvisoryRoutes from './routes/deepAdvisoryRoutes';
-import demoRoutes from './routes/demoRoutes';
+import outreachRoutes          from './routes/outreachRoutes';
+import responseAnalysisRoutes  from './routes/responseAnalysisRoutes';
+import demoRoutes              from './routes/demoRoutes';
 import { errorHandler } from './middleware/errorHandler';
 import { isManusAvailable } from './services/manusService';
 
@@ -81,6 +83,9 @@ export const ROUTE_MANIFEST = [
   // ── Feedback ──
   { method: 'POST', path: '/feedback', description: 'Record recruiter feedback. Body: { candidate_id, role_id, event_type }. Events: thumbs_up | thumbs_down | advance | reject | note' },
 
+  // ── Response analysis ──
+  { method: 'POST', path: '/analyze-response', description: 'Evaluate candidate reply. signal_quality + decision (move_to_call|ask_followup|drop). Body: { role_id, candidate_id, question, response }' },
+
   // ── Demo ──
   { method: 'POST', path: '/demo/seed', description: 'Seed demo role + 3 preset candidates. Returns role_id for next steps.' },
   { method: 'GET', path: '/demo/status', description: 'Demo state overview. Query: ?role_id=uuid' },
@@ -130,7 +135,9 @@ app.use('/', agentRoutes);
 app.use('/', conversationRoutes);
 app.use('/', feedbackRoutes);
 app.use('/', deepAdvisoryRoutes);   // POST /deep-advisory
-app.use('/', demoRoutes);           // POST /demo/seed  GET /demo/status
+app.use('/', outreachRoutes);              // POST /generate-outreach
+app.use('/', responseAnalysisRoutes);     // POST /analyze-response
+app.use('/', demoRoutes);                 // POST /demo/seed  GET /demo/status
 
 // ── Global error handler — must be last ───────────────────────────────────────
 app.use(errorHandler);

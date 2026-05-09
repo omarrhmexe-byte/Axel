@@ -36,11 +36,12 @@ export interface CandidateCard {
   sections:  CardSections;
 }
 
+// Shape produced by advisorPrompt.
 export interface AdvisoryOutput {
-  quick_take:            string;
-  why_interesting:       string[];
-  where_they_add_value:  string[];
-  open_questions:        string[];
+  why_interesting:  string[];  // Concrete evidence tied to this specific role
+  risk_unknown:     string[];  // What is NOT proven; what could break
+  trajectory:       string[];  // Direction they are moving; environment they thrive in
+  question_to_ask:  string;    // ONE human question to reduce the biggest uncertainty
 }
 
 // ─── Pipeline Candidate ───────────────────────────────────────────────────────
@@ -147,6 +148,49 @@ export interface CandidateResponse {
   question: string;
   answer:   string;
 }
+
+// ─── Feedback ─────────────────────────────────────────────────────────────────
+export type FeedbackEventType =
+  | 'advance' | 'reject' | 'thumbs_up' | 'thumbs_down' | 'note' | 'question_added';
+
+// ─── Deep advisory ────────────────────────────────────────────────────────────
+export interface DeepAdvisoryResult {
+  advisory:        AdvisoryOutput;
+  mode:            'fast' | 'deep';
+  manus_brief_id?: string;
+  manus_available: boolean;
+}
+
+// ─── Response analysis ────────────────────────────────────────────────────────
+export type SignalQuality    = 'strong' | 'medium' | 'weak';
+export type ResponseDecision = 'move_to_call' | 'ask_followup' | 'drop';
+
+export interface ResponseAnalysisOutput {
+  signal_quality:  SignalQuality;
+  what_we_learned: string[];
+  what_is_unclear: string[];
+  decision:        ResponseDecision;
+  decision_reason: string;
+}
+
+export interface ResponseAnalysisResult {
+  candidate_id: string;
+  role_id:      string;
+  analysis:     ResponseAnalysisOutput;
+}
+
+// ─── Outreach ─────────────────────────────────────────────────────────────────
+export interface OutreachResult {
+  candidate_id: string;
+  role_id:      string;
+  subject:      string;
+  body:         string;
+}
+
+// ─── Candidate stage (kanban) ──────────────────────────────────────────────────
+export type CandidateStage =
+  | 'new' | 'shortlisted' | 'hold' | 'rejected'
+  | 'outreach_sent' | 'responded' | 'interviewing';
 
 // ─── Waitlist ─────────────────────────────────────────────────────────────────
 export interface WaitlistEntry {

@@ -20,6 +20,52 @@
 
 import { env } from '../config/env';
 
+// ── Manus system identity ─────────────────────────────────────────────────────
+// This prefix is prepended to EVERY task sent to Manus.
+// It defines Manus's role and strict operating rules inside Axel.
+// EDIT HERE to change how Manus behaves across all research tasks.
+const MANUS_SYSTEM_PREFIX = `You are Manus, the research layer inside an AI hiring system.
+
+Your role is to gather relevant public information that improves hiring context.
+You are NOT the decision-maker.
+You do NOT evaluate final fit, rank candidates, or recommend hire / no hire.
+
+Your job is limited to 4 research areas:
+1. Company context
+2. Role context
+3. Target-company mapping
+4. Public candidate evidence
+
+STRICT RULES:
+- Use only public, role-relevant information
+- Do not speculate beyond the evidence
+- Do not infer sensitive personal attributes
+- Do not guess compensation, motivations, health, family, politics, religion, or other private details
+- Do not make final hiring judgments
+- Do not use vague fluff like "strong profile" or "great candidate"
+- Do not produce long essays
+
+When information is weak or missing, say so clearly.
+
+Always separate output into:
+1. Observed Facts
+2. Reasonable Inferences
+3. Unknowns
+
+Only return information that helps with one of these next actions:
+- refine the role brief
+- identify relevant target companies
+- enrich a candidate profile
+- improve outreach relevance
+
+If the requested research does not clearly support one of those actions, say:
+"Insufficient reason to research this area."
+
+---
+
+RESEARCH TASK:
+`;
+
 // ── Config ────────────────────────────────────────────────────────────────────
 // Update MANUS_BASE_URL if the Manus API endpoint changes
 const MANUS_BASE_URL    = 'https://api.manus.im/api/v1';
@@ -101,8 +147,8 @@ export async function runManusResearch(prompt: string): Promise<string> {
     throw new Error('MANUS_API_KEY not configured. Add it to .env to use deep advisory.');
   }
 
-  // 1. Create the task
-  const { task_id } = await createTask(prompt);
+  // 1. Create the task. System prefix defines Manus's identity and rules.
+  const { task_id } = await createTask(`${MANUS_SYSTEM_PREFIX}${prompt}`);
 
   // 2. Poll until done
   for (let attempt = 0; attempt < MAX_POLL_ATTEMPTS; attempt++) {
@@ -119,7 +165,7 @@ export async function runManusResearch(prompt: string): Promise<string> {
       throw new Error(`Manus task ${task_id} failed: ${status.error ?? 'unknown error'}`);
     }
 
-    // status is 'pending' or 'running' — keep polling
+    // status is 'pending' or 'running', keep polling
   }
 
   throw new Error(`Manus task timed out after ${(POLL_INTERVAL_MS * MAX_POLL_ATTEMPTS) / 1000}s`);
