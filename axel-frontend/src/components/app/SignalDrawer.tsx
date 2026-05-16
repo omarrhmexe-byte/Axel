@@ -12,7 +12,7 @@
  */
 
 import { useState }               from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   X, Copy, Check, Loader2, Sparkles,
 } from 'lucide-react';
@@ -244,11 +244,11 @@ export function SignalDrawer({ candidate, roleId, stage, onClose }: Props) {
         <div className="flex-1 overflow-y-auto">
 
           {/* ── Why interesting (advisory) ─────────────────────────────── */}
-          {displayAdvisory?.why_interesting?.length > 0 && (
+          {(displayAdvisory?.why_interesting?.length ?? 0) > 0 && (
             <div className="px-6 py-5 border-b border-stone-800/60">
               <DimLabel text="Why interesting" />
               <ul className="space-y-2 mt-2.5">
-                {displayAdvisory.why_interesting.map((signal, i) => (
+                {displayAdvisory!.why_interesting.map((signal, i) => (
                   <li key={i} className="text-[13px] text-stone-300 leading-snug flex gap-2.5">
                     <span className="text-stone-700 shrink-0 mt-0.5 font-mono text-[10px]">→</span>
                     {signal}
@@ -341,11 +341,11 @@ export function SignalDrawer({ candidate, roleId, stage, onClose }: Props) {
           </div>
 
           {/* ── Risk / Unknown (advisory) ─────────────────────────────── */}
-          {displayAdvisory?.risk_unknown?.length > 0 && (
+          {(displayAdvisory?.risk_unknown?.length ?? 0) > 0 && (
             <div className="px-6 py-5 border-b border-stone-800/60">
               <DimLabel text="Risk / Unknown" />
               <ul className="space-y-2 mt-2.5">
-                {displayAdvisory.risk_unknown.map((risk, i) => (
+                {displayAdvisory!.risk_unknown.map((risk, i) => (
                   <li key={i} className="text-[12px] text-stone-500 leading-snug flex gap-2.5">
                     <span className="text-rose-900 shrink-0 mt-0.5 font-mono text-[10px]">△</span>
                     {risk}
@@ -356,11 +356,11 @@ export function SignalDrawer({ candidate, roleId, stage, onClose }: Props) {
           )}
 
           {/* ── Trajectory (advisory) ─────────────────────────────────── */}
-          {displayAdvisory?.trajectory?.length > 0 && (
+          {(displayAdvisory?.trajectory?.length ?? 0) > 0 && (
             <div className="px-6 py-5 border-b border-stone-800/60">
               <DimLabel text="Trajectory" />
               <ul className="space-y-2 mt-2.5">
-                {displayAdvisory.trajectory.map((line, i) => (
+                {displayAdvisory!.trajectory.map((line, i) => (
                   <li key={i} className="text-[12px] text-stone-400 leading-snug flex gap-2.5">
                     <span className="text-sky-900 shrink-0 mt-0.5 font-mono text-[10px]">↗</span>
                     {line}
