@@ -43,6 +43,7 @@ const ALLOWED_ORIGINS = [
   'http://localhost:5173',
   'http://localhost:4173',
   'https://axelhq.vercel.app',
+  'https://axel-umber.vercel.app',
 ];
 
 function isAllowedOrigin(origin: string): boolean {
