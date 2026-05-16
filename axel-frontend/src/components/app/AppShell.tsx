@@ -2,18 +2,27 @@
  * AppShell — minimal layout wrapper for the operator UI.
  * All /app/* pages render inside this.
  */
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Plus }   from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Plus, LogOut } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 interface AppShellProps {
-  children:    React.ReactNode;
-  back?:       { label: string; to: string };
-  title?:      string;
-  subtitle?:   string;
-  action?:     React.ReactNode;
+  children:  React.ReactNode;
+  back?:     { label: string; to: string };
+  title?:    string;
+  subtitle?: string;
+  action?:   React.ReactNode;
 }
 
 export function AppShell({ children, back, title, subtitle, action }: AppShellProps) {
+  const { logout, user } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    await logout();
+    navigate('/login', { replace: true });
+  }
+
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col">
       {/* Top bar */}
@@ -27,7 +36,10 @@ export function AppShell({ children, back, title, subtitle, action }: AppShellPr
             {back.label}
           </Link>
         ) : (
-          <Link to="/app/new" className="text-[11px] font-mono font-bold tracking-widest text-stone-400 hover:text-white transition-colors">
+          <Link
+            to="/app/new"
+            className="text-[11px] font-mono font-bold tracking-widest text-stone-400 hover:text-white transition-colors"
+          >
             AXEL
           </Link>
         )}
@@ -42,6 +54,7 @@ export function AppShell({ children, back, title, subtitle, action }: AppShellPr
 
         <div className="ml-auto flex items-center gap-3">
           {action}
+
           <Link
             to="/app/new"
             className="flex items-center gap-1.5 text-xs text-stone-500 hover:text-stone-300 px-2 py-1 rounded border border-stone-800 hover:border-stone-600 transition-all"
@@ -49,6 +62,16 @@ export function AppShell({ children, back, title, subtitle, action }: AppShellPr
             <Plus className="w-3 h-3" />
             New run
           </Link>
+
+          {/* Sign-out */}
+          <button
+            onClick={handleLogout}
+            title={user?.email ?? 'Sign out'}
+            className="flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-400 px-2 py-1 rounded border border-stone-800/0 hover:border-stone-800 transition-all"
+          >
+            <LogOut className="w-3 h-3" />
+            <span className="hidden sm:inline">Sign out</span>
+          </button>
         </div>
       </header>
 
