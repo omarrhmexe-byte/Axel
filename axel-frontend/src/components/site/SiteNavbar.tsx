@@ -80,6 +80,16 @@ export function SiteNavbar() {
         {/* Right */}
         <div className="flex items-center gap-3">
           <Link
+            to="/login"
+            className={`hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              dark
+                ? 'text-white/50 hover:text-white'
+                : 'text-stone-500 hover:text-stone-900'
+            }`}
+          >
+            Sign in
+          </Link>
+          <Link
             to="/access"
             className={`hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
               dark
@@ -124,6 +134,12 @@ export function SiteNavbar() {
                 className="block mt-2 px-4 py-2.5 rounded-lg bg-axel-500 text-white text-sm font-semibold text-center"
               >
                 Get access
+              </Link>
+              <Link
+                to="/login"
+                className="block px-4 py-2.5 rounded-lg text-sm font-medium text-stone-500 hover:bg-stone-100 transition-colors text-center"
+              >
+                Sign in
               </Link>
             </nav>
           </motion.div>
